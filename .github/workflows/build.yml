@@ -5,18 +5,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm pack
+
+      # 1. 打包生成 tgz，保存文件名
+      - id: pack
+        run: |
+          PKG_FILE=$(npm pack)
+          echo "pkg_file=$PKG_FILE" >> $GITHUB_ENV
+
+      # 2. 初始化 example 项目
       - run: npx @react-native-community/cli init example
+
+      # 3. 拷贝 index.js 和 example-app
       - run: cp index.js example/
       - run: cp -r example-app example/
-      - run: npm i ../react-native-amap3d-0.0.0.tgz
+
+      # 4. 在 example 中安装打包产物
+      - run: npm i ../${{ env.pkg_file }}
         working-directory: example
+
+      # 5. 安装其他依赖
       - run: npm i @react-native-picker/picker @react-navigation/native @react-navigation/native-stack react-native-safe-area-context react-native-screens
         working-directory: example
+
+      # 6. 修改 gradle 配置
       - run: sed -i.backup -r 's/(enableSeparateBuildPerCPUArchitecture = )false/\1true/' build.gradle
         working-directory: example/android/app
+
+      # 7. 构建 APK
       - run: ./gradlew assembleRelease
         working-directory: example/android
+
+      # 8. 上传 APK
       - uses: actions/upload-artifact@v4
         with:
           name: example.apk
