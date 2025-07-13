@@ -1,5 +1,5 @@
 {
-  "name": "react-native-amap3d",
+  "name": "@maps/rn-amap",
   "version": "0.0.0",
   "description": "react-native 高德地图组件，支持 Android + iOS",
   "author": "MaoXiaSoft",
