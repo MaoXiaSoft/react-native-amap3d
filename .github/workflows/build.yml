@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1. 打包生成 tgz，保存文件名
+      # 1. 打包并保存 tgz 文件名
       - id: pack
         run: |
           PKG_FILE=$(npm pack)
@@ -23,19 +23,24 @@ jobs:
       - run: npm i ../${{ env.pkg_file }}
         working-directory: example
 
-      # 5. 安装其他依赖
-      - run: npm i @react-native-picker/picker @react-navigation/native @react-navigation/native-stack react-native-safe-area-context react-native-screens
+      # 5. 安装兼容版本 @react-native-picker/picker
+      # 根据你的 React Native 版本适当调整 picker 版本号
+      - run: npm i @react-native-picker/picker@8.0.0 @react-navigation/native @react-navigation/native-stack react-native-safe-area-context react-native-screens
         working-directory: example
 
       # 6. 修改 gradle 配置
       - run: sed -i.backup -r 's/(enableSeparateBuildPerCPUArchitecture = )false/\1true/' build.gradle
         working-directory: example/android/app
 
-      # 7. 构建 APK
+      # 7. Clean 构建目录（推荐加上）
+      - run: ./gradlew clean
+        working-directory: example/android
+
+      # 8. 构建 APK
       - run: ./gradlew assembleRelease
         working-directory: example/android
 
-      # 8. 上传 APK
+      # 9. 上传 APK
       - uses: actions/upload-artifact@v4
         with:
           name: example.apk
