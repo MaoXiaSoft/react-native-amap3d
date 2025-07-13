@@ -1,0 +1,135 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>react-native-amap3d</title><meta name="description" content="Documentation for react-native-amap3d"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><script async src="assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="index.html" class="title">react-native-amap3d</a><div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>react-native-amap3d</h1></div><div class="tsd-panel tsd-typography"><h1 id="react-native-amap3d" class="tsd-anchor-link">react-native-amap3d <a href="https://www.npmjs.com/package/react-native-amap3d"><img src="https://img.shields.io/npm/v/react-native-amap3d.svg" alt=""></a> <a href="https://github.com/qiuxiang/react-native-amap3d/actions/workflows/build.yml"><img src="https://github.com/qiuxiang/react-native-amap3d/actions/workflows/build.yml/badge.svg" alt=""></a><a href="#react-native-amap3d" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><strong>注意：该项目目前只维护，不加新功能。</strong></p>
+<p>react-native 高德地图组件，使用最新 3D SDK，支持 Android + iOS，受 <a href="https://github.com/airbnb/react-native-maps">react-native-maps</a> 启发，提供功能丰富且易用的接口。</p>
+<p>相关项目推荐：</p>
+<ul>
+<li><a href="https://github.com/qiuxiang/react-native-baidumap-sdk">react-native-baidumap-sdk（百度地图 SDK）</a></li>
+<li><a href="https://github.com/qiuxiang/react-native-amap-geolocation">react-native-amap-geolocation（高德地图定位模块）</a></li>
+</ul>
+<h2 id="功能" class="tsd-anchor-link">功能<a href="#功能" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>地图模式切换（常规、卫星、导航、夜间）</li>
+<li>3D 建筑、路况、室内地图</li>
+<li>内置地图控件的显示隐藏（指南针、比例尺、定位按钮、缩放按钮）</li>
+<li>手势交互控制（平移、缩放、旋转、倾斜）</li>
+<li>中心坐标、缩放级别、倾斜度的设置，支持动画过渡</li>
+<li>地图事件（onPress、onLongPress、onLocation、onCameraMove、onCameraIdle 等）</li>
+<li>地图标记（Marker）</li>
+<li>折线绘制（Polyline）</li>
+<li>多边形绘制（Polygon）</li>
+<li>圆形绘制（Circle）</li>
+<li>热力图（HeatMap）</li>
+<li>海量点（MultiPoint）</li>
+<li>点聚合（Cluster）</li>
+</ul>
+<h2 id="接口文档" class="tsd-anchor-link">接口文档<a href="#接口文档" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://qiuxiang.github.io/react-native-amap3d/api/">https://qiuxiang.github.io/react-native-amap3d/api/</a></p>
+<h2 id="安装" class="tsd-anchor-link">安装<a href="#安装" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-2">react-native-amap3d</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="添加高德-api-key" class="tsd-anchor-link">添加高德 API Key<a href="#添加高德-api-key" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>首先你需要获取高德地图 API Key：</p>
+<ul>
+<li><a href="http://lbs.amap.com/api/android-sdk/guide/create-project/get-key">Aandroid</a></li>
+<li><a href="https://lbs.amap.com/api/ios-sdk/guide/create-project/get-key">iOS</a></li>
+</ul>
+<p>然后你需要在显示地图前调用接口设置 API key：</p>
+<pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">AMapSdk</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&quot;react-native-amap3d&quot;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">Platform</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&quot;react-native&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">AMapSdk</span><span class="hl-1">.</span><span class="hl-0">init</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-4">Platform</span><span class="hl-1">.</span><span class="hl-0">select</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-4">android:</span><span class="hl-1"> </span><span class="hl-2">&quot;c52c7169e6df23490e3114330098aaac&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">ios:</span><span class="hl-1"> </span><span class="hl-2">&quot;186d3464209b74effa4d8391f441f14d&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  })</span><br/><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="用法" class="tsd-anchor-link">用法<a href="#用法" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><h3 id="显示地图" class="tsd-anchor-link">显示地图<a href="#显示地图" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="jsx">import { MapView, MapType } from "react-native-amap3d";
+
+<MapView
+  mapType={MapType.Satellite}
+  initialCameraPosition={{
+    target: {
+      latitude: 39.91095,
+      longitude: 116.37296,
+    },
+    zoom: 8,
+  }}
+/>;
+</code><button type="button">Copy</button></pre>
+
+<p><img src=https://user-images.githubusercontent.com/1709072/140698774-bdbfee64-d403-4e49-9a85-716d44783cfd.png height=500> <img src=https://user-images.githubusercontent.com/1709072/140849895-dada3f51-74c0-4685-b5d6-c1b69a4d06bb.PNG height=500></p>
+<h3 id="监听地图事件" class="tsd-anchor-link">监听地图事件<a href="#监听地图事件" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="jsx">import { MapView } from "react-native-amap3d";
+
+<MapView
+  onLoad={() => console.log("onLoad")}
+  onPress={({ nativeEvent }) => console.log(nativeEvent)}
+  onCameraIdle={({ nativeEvent }) => console.log(nativeEvent)}
+/>;
+</code><button type="button">Copy</button></pre>
+
+<p><img src=https://user-images.githubusercontent.com/1709072/140705501-9ed3e038-e52a-48c2-a98a-235c5c890549.png height=500> <img src=https://user-images.githubusercontent.com/1709072/140849894-3add3858-fc7f-47cd-9786-94aeef399ebc.PNG height=500></p>
+<h3 id="添加标记" class="tsd-anchor-link">添加标记<a href="#添加标记" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>其中 <code>icon</code> 支持 <a href="https://reactnative.dev/docs/image#imagesource">ImageSource</a>。</p>
+<p>同时支持 <code>children</code> 作为标记图标。</p>
+<pre><code class="jsx">import { MapView, Marker } from "react-native-amap3d";
+
+<MapView>
+  <Marker
+    position={{ latitude: 39.806901, longitude: 116.397972 }}
+    icon={require("../images/flag.png")}
+    onPress={() => alert("onPress")}
+  />
+  <Marker
+    position={{ latitude: 39.806901, longitude: 116.297972 }}
+    icon={{
+      uri: "https://reactnative.dev/img/pwa/manifest-icon-512.png",
+      width: 64,
+      height: 64,
+    }}
+  />
+  <Marker position={{ latitude: 39.906901, longitude: 116.397972 }}>
+    <Text
+      style={{
+        color: "#fff",
+        backgroundColor: "#009688",
+        alignItems: "center",
+        borderRadius: 5,
+        padding: 5,
+      }}
+    >
+      {new Date().toLocaleString()}
+    </Text>
+  </Marker>
+</MapView>;
+</code><button type="button">Copy</button></pre>
+
+<p><img src=https://user-images.githubusercontent.com/1709072/140707579-4abe070a-3fc1-481d-8a2e-91ac2ad8bdc7.png height=500> <img src=https://user-images.githubusercontent.com/1709072/140849886-7eb9322b-8fa8-4049-a7b0-3eb36d006992.PNG height=500></p>
+<h3 id="点聚合" class="tsd-anchor-link">点聚合<a href="#点聚合" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Marker 数量过多（尤其是使用自定义 View 的情况下）会导致性能问题，而且显示过于密集，这时候可以用点聚合改善。</p>
+<pre><code class="jsx">import { Cluster, MapView, Marker } from "react-native-amap3d";
+
+const markers = Array(1000)
+  .fill(0)
+  .map((_, i) => ({
+    position: { latitude: 39.5 + Math.random(), longitude: 116 + Math.random() },
+    properties: { key: `Marker${i}` },
+  }));
+
+<MapView
+  ref={(ref) => (this.mapView = ref)}
+  onLoad={() => this.mapView?.moveCamera({ zoom: 8 }, 100)}
+  onCameraIdle={({ nativeEvent }) => {
+    this.status = nativeEvent;
+    this.cluster?.update(nativeEvent);
+  }}
+>
+  <Cluster
+    ref={(ref) => (this.cluster = ref)}
+    points={markers}
+    renderMarker={(item) => (
+      <Marker
+        key={item.properties.key}
+        icon={require("../images/flag.png")}
+        position={item.position}
+      />
+    )}
+  />
+</MapView>;
+</code><button type="button">Copy</button></pre>
+
+<p><img src=https://user-images.githubusercontent.com/1709072/140710764-40f767cd-74fd-47ca-8310-897bbf58fbbd.png height=500> <img src=https://user-images.githubusercontent.com/1709072/140849888-6b6609c1-2e55-41c2-bdc3-f9d3fcc7a112.PNG height=500></p>
+<p><img src=https://user-images.githubusercontent.com/1709072/140710758-63e81ade-2635-4412-a5fa-b6948605fe75.png height=500> <img src=https://user-images.githubusercontent.com/1709072/140849880-9eb7609d-55a7-43be-8b6a-bac725fb0a82.PNG height=500></p>
+<h3 id="更多示例" class="tsd-anchor-link">更多示例<a href="#更多示例" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>参考 <a href="https://github.com/qiuxiang/react-native-amap3d/tree/master/example-app">example</a>。</p>
+<h2 id="常见问题" class="tsd-anchor-link">常见问题<a href="#常见问题" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>尽量使用真实设备进行测试，在模拟器可能存在一些问题（常见的是 Android 模拟器因为缺少 GPU 加速而导致闪退）。</li>
+<li>onLocation 没有返回定位数据通常是因为 key 不正确，或没有申请 PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION 权限</li>
+</ul>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#react-native-amap3d"><span>react-<wbr/>native-<wbr/>amap3d  </span></a><ul><li><a href="#功能"><span>功能</span></a></li><li><a href="#接口文档"><span>接口文档</span></a></li><li><a href="#安装"><span>安装</span></a></li><li><ul><li><a href="#添加高德-api-key"><span>添加高德 <wbr/>API <wbr/>Key</span></a></li></ul></li><li><a href="#用法"><span>用法</span></a></li><li><ul><li><a href="#显示地图"><span>显示地图</span></a></li><li><a href="#监听地图事件"><span>监听地图事件</span></a></li><li><a href="#添加标记"><span>添加标记</span></a></li><li><a href="#点聚合"><span>点聚合</span></a></li><li><a href="#更多示例"><span>更多示例</span></a></li></ul></li><li><a href="#常见问题"><span>常见问题</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">react-native-amap3d</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
