@@ -98,7 +98,8 @@ export default class extends Component<MarkerProps> {
    * icon 更新。
    */
   update = () => {
-    setTimeout(() => this.invoke("update"), 0);
+    // 传递空数组而不是undefined，避免null参数
+    setTimeout(() => this.invoke("update", []), 0);
   };
 
   componentDidUpdate() {
