@@ -25,7 +25,7 @@ jobs:
 
       # 5. 安装兼容版本 @react-native-picker/picker
       # 根据你的 React Native 版本适当调整 picker 版本号
-      - run: npm i @react-native-picker/picker@8.0.0 @react-navigation/native @react-navigation/native-stack react-native-safe-area-context react-native-screens
+      - run: npm i @react-native-picker/picker @react-navigation/native @react-navigation/native-stack react-native-safe-area-context react-native-screens
         working-directory: example
 
       # 6. 修改 gradle 配置
